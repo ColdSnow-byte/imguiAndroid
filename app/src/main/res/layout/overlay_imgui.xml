@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Root of the TYPE_APPLICATION_OVERLAY window.
+     Vertical split: [title bar = move handle] [surface + resize grip] -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/overlay_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/overlay_window_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/overlay_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/overlay_title_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="4dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/overlay_title"
+            android:textColor="#F2FFFFFF"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/overlay_close"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/overlay_close"
+            android:padding="6dp"
+            android:src="@drawable/ic_close_24" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <SurfaceView
+            android:id="@+id/overlay_surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:id="@+id/overlay_resize_grip"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/overlay_resize_grip" />
+    </FrameLayout>
+
+</LinearLayout>

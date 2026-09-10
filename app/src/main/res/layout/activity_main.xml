@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The app targets SDK 36, where edge-to-edge is enforced: on some OEMs (MIUI /
+  HyperOS) the content would start at the very top of the screen and slide under
+  the decor ActionBar, hiding the first views. To remove that OEM-dependent
+  behaviour we use a NoActionBar theme, own the toolbar ourselves and apply the
+  system-bar insets as padding in MainActivity.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="@string/app_name"
+        app:titleTextColor="?attr/colorOnPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- NOTE: do not use ?android:attr/textAppearance* here. Some MIUI/HyperOS
+             ROMs bind those platform styles to a fontFamily whose fallback chain
+             has no CJK face, which silently renders Chinese text as blank.
+             Explicit textSize + theme text colour avoids that mapping. -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_desc"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/status_unknown"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_permission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/btn_grant_overlay" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/btn_start_overlay" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/btn_stop_overlay" />
+
+    </LinearLayout>
+
+</LinearLayout>

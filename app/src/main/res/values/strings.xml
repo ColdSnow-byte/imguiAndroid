@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">imguiD</string>
+
+    <string name="main_desc">以 TYPE_APPLICATION_OVERLAY 悬浮窗的形式渲染 Dear ImGui 界面。
+        拖动顶部标题栏可移动窗口，拖动右下角把手可缩放窗口。</string>
+
+    <string name="status_unknown">状态：未知</string>
+    <string name="status_ready">状态：已授予悬浮窗权限</string>
+    <string name="status_denied">状态：尚未授予悬浮窗权限</string>
+
+    <string name="btn_grant_overlay">授予悬浮窗权限</string>
+    <string name="btn_start_overlay">启动悬浮窗</string>
+    <string name="btn_stop_overlay">关闭悬浮窗</string>
+
+    <string name="overlay_title">ImGui 悬浮窗</string>
+    <string name="overlay_close">关闭</string>
+
+    <string name="toast_already_granted">已拥有悬浮窗权限</string>
+    <string name="toast_need_permission">请先授予悬浮窗权限</string>
+
+    <string name="notification_channel_name">ImGui 悬浮窗</string>
+    <string name="notification_channel_desc">保持 ImGui 悬浮窗在后台运行</string>
+    <string name="notification_title">ImGui 悬浮窗正在运行</string>
+    <string name="notification_text">点击打开控制面板</string>
+</resources>
