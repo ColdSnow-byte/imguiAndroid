@@ -618,8 +618,8 @@ void BuildUi(float w, float h)
     ImGui::Separator();
 
     ImGui::Spacing();
-    ImGui::TextWrapped(u8"拖动顶部标题栏可移动窗口，拖动右下角把手可缩放窗口；"
-                       u8"两者都是通过 Java 侧动态修改 WindowManager.LayoutParams 实现的。");
+    ImGui::TextWrapped(u8"拖动顶部标题栏可移动窗口，拖动右下角把手可缩放窗口；");
+    ImGui::TextWrapped(u8"这个界面可以浮动在其他应用和系统界面之上；");
     ImGui::Spacing();
     ImGui::Separator();
 
@@ -716,7 +716,7 @@ void DrawSolidWindow()
     ImGui::SliderFloat(u8"旋转速度##gl", &g_spinSpeed, 0.0f, 3.0f);
     ImGui::SliderInt(u8"渲染分辨率##gl", &g_glSize, 64, 1024, u8"%d px");
     ImGui::Checkbox(u8"锁定 60 帧（取消则解锁为无限）##gl", &g_lockFps);
-    ImGui::Text(u8"%d 个面，每个面三色相互渐变", g_solidScene.FaceCount(type));
+    ImGui::Text(u8"%d 个面", g_solidScene.FaceCount(type));
     ImGui::Text(u8"帧率：%.1f FPS（%s）", (double)g_fps,
                 g_lockFps ? u8"已锁定 60" : u8"已解锁 · 无限");
     if (g_solidScene.RendererName()[0] != '\0')
@@ -752,7 +752,7 @@ void DrawCpuSolidWindow()
     ImGui::SliderFloat(u8"旋转速度##cpu", &g_spinSpeed, 0.0f, 3.0f);
     ImGui::SliderInt(u8"渲染分辨率##cpu", &g_cpuSize, 64, 1024, u8"%d px");
     ImGui::Checkbox(u8"锁定 60 帧（取消则解锁为无限）##cpu", &g_lockFps);
-    ImGui::Text(u8"%d 个面，每个面三色相互渐变", g_cpuSolidScene.FaceCount(type));
+    ImGui::Text(u8"%d 个面", g_cpuSolidScene.FaceCount(type));
     ImGui::Text(u8"光栅化 %dx%d 用时 %.2f ms",
                 g_cpuSolidScene.RenderSize(), g_cpuSolidScene.RenderSize(),
                 (double)g_cpuSolidScene.LastCpuMs());
@@ -798,7 +798,7 @@ void DrawVulkanSolidWindow()
     ImGui::Text(u8"Vulkan 绘制：%.2f ms/帧", (double)g_vulkanSolidScene.LastGpuMs());
     ImGui::Text(u8"渲染尺寸：%d x %d",
                 g_vulkanSolidScene.RenderSize(), g_vulkanSolidScene.RenderSize());
-    ImGui::Text(u8"%d 个面，每个面三色相互渐变", g_vulkanSolidScene.FaceCount(type));
+    ImGui::Text(u8"%d 个面", g_vulkanSolidScene.FaceCount(type));
 
     if (g_vulkanSolidScene.ApiVersion() != 0)
     {
@@ -849,7 +849,7 @@ void DrawAngleSolidWindow()
     ImGui::Text(u8"ANGLE 绘制 + 回读：%.2f ms/帧", (double)g_angleSolidScene.LastCpuMs());
     ImGui::Text(u8"渲染尺寸：%d x %d",
                 g_angleSolidScene.RenderSize(), g_angleSolidScene.RenderSize());
-    ImGui::Text(u8"%d 个面，每个面三色相互渐变", g_angleSolidScene.FaceCount(type));
+    ImGui::Text(u8"%d 个面", g_angleSolidScene.FaceCount(type));
 
     if (g_angleSolidScene.RendererName()[0] != '\0')
     {

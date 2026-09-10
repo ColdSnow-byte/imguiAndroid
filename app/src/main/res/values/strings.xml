@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">imguiD</string>
+    <string name="app_name">ImGuiRender</string>
 
-    <string name="main_desc">以 TYPE_APPLICATION_OVERLAY 悬浮窗的形式渲染 Dear ImGui 界面。
-        拖动顶部标题栏可移动窗口，拖动右下角把手可缩放窗口。</string>
+    <string name="main_desc">使用OpenGLES渲染ImGui界面。
+        拖动顶部标题栏可移动窗口，拖动右下角把手可缩放窗口</string>
 
     <string name="status_unknown">状态：未知</string>
     <string name="status_ready">状态：已授予悬浮窗权限</string>
